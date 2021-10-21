@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Input from '../components/Input';
 import Loading from '../components/Loading';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import './search.css';
 
 class Search extends Component {
   constructor() {
@@ -60,8 +61,8 @@ class Search extends Component {
       <div data-testid="page-search">
         <Header />
         {loading ? <Loading /> : (
-          <div>
-            <div>
+          <div className='total-search'>
+            <div className='search-fields'>
               <Input
                 testeid="search-artist-input"
                 type="text"
@@ -76,15 +77,15 @@ class Search extends Component {
                 ButtonClick={ this.buttonSearch }
               />
             </div>
-            <div>
+            <div className='search-results'>
               <h2>
-                {`Resultado de álbuns de: ${artNameState}`}
+                {`Resultado de álbuns de:  ${artNameState}`}
               </h2>
-              <div>
+              <div className='album-list'>
                 {!artists.length ? <p>Nenhum álbum foi encontrado</p>
                   : artists.map((artist) => (
-                    <div key={ artist.collectionId }>
-                      <Link
+                    <div className='album-cart' key={ artist.collectionId }>
+                      <Link className='link-cart'
                         data-testid={ `link-to-album-${artist.collectionId}` }
                         to={ `/album/${artist.collectionId}` }
                       >

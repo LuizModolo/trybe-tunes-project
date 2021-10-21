@@ -8,7 +8,7 @@ class MusicCard extends Component {
       funcFavSong,
       checkIsFav } = this.props;
     return (
-      <div>
+      <div className='music-item'>
         <p>{trackName}</p>
         <audio data-testid="audio-component" src={ previewUrl } controls>
           <track kind="captions" />
@@ -18,8 +18,6 @@ class MusicCard extends Component {
           .
         </audio>
         <label htmlFor={ trackId }>
-          {' '}
-          Favorita
           <input
             type="checkbox"
             id={ trackId }

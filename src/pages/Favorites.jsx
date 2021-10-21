@@ -66,7 +66,7 @@ class Favorites extends Component {
       <div data-testid="page-favorites">
         <Header />
         {loading ? <Loading /> : (
-          <div>
+          <div className='favorits-list'>
             <h2>Músicas Favoritas</h2>
             <div>
               {favoriteList.map((music) => (<MusicCard

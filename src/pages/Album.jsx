@@ -5,6 +5,7 @@ import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
 import getMusics from '../services/musicsAPI';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import './album.css';
 
 class Album extends Component {
   constructor() {
@@ -82,13 +83,13 @@ class Album extends Component {
       <div data-testid="page-album">
         <Header />
         {loading ? <Loading /> : (
-          <div>
-            <div>
-              <img src={ album[0].artworkUrl100 } alt={ album[0].collectionName } />
+          <div className='main-album'>
+            <div className='album-cart2'>
+              <img src={ albumInfo.artworkUrl100 } alt={ albumInfo.collectionName } />
               <h1 data-testid="album-name">{albumInfo.collectionName}</h1>
               <h3 data-testid="artist-name">{albumInfo.artistName}</h3>
             </div>
-            <div>
+            <div className='music-album-list'>
               {album.map((music) => (<MusicCard
                 key={ music.trackId }
                 music={ music }

@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import Form from '../components/Form';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
+import './login.css';
 
 class Login extends Component {
   constructor() {
@@ -68,14 +69,28 @@ class Login extends Component {
       return <Redirect to="/search" />;
     }
     return (
-      <div data-testid="page-login">
+      <div className="login" data-testid="page-login">
         {loading ? <Loading />
           : (
-            <Form
-              { ...this.state }
-              onInputChange={ this.handleChange }
-              loginButtonClick={ this.fetchAPI }
-            />)}
+            <div>
+              <div className='logotunes'>
+                <img src='/LOGO_POSITIVA 1.png' alt='trybetuneslogo' />
+              </div>
+              <div className="total-login">
+                <div className="image-login">
+                  <img src='/3071357.jpg' alt='login' />
+                </div>
+                <div className="form-login">
+                  <h2>Nome do usuário:</h2>
+                  <Form
+                  { ...this.state }
+                  onInputChange={ this.handleChange }
+                  loginButtonClick={ this.fetchAPI }
+                  />
+                </div>
+              </div>
+            </div>
+            )}
       </div>
     );
   }

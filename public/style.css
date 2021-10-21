@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap');
+
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+html {
+
+  --font: 'Comfortaa', sans-serif;
+
+  --font-title: 'Comfortaa', sans-serif;
+
+  --font-size: 1.2rem;
+
+  --color: #19f;
+
+  --color-light: #adf;
+
+  --color-dark: #018;
+
+  --radius: 0.2rem;
+}
+
+body {
+  margin: 0;
+}
+
+body, input, textarea, button {
+  font-family: var(--font);
+  font-size: var(--font-size);
+}
+
+h1, h2, h3 {
+  font-family: var(--font);
+}
+
+h1, h2, h3, p, ul {
+  margin: 1rem 0;
+}
+
+ul {
+  list-style: square;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+input:not( [ type = 'checkbox' ] ), textarea, select {
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  display: block;
+  padding: 0.8rem;
+  transition: 0.2s;
+  width: 100%;
+}
+
+input:focus, textarea:focus {
+  background: white;
+  border-color: var(--color);
+  box-shadow: 0 0 0 3px var(--color-light);
+  outline: none;
+}
+
+button {
+  background: var(--color);
+  border: none;
+  border-radius: var(--radius);
+  color: var(--color-dark);
+  cursor: pointer;
+  padding: 0.8rem 1.6rem;
+  transition: 0.1s;
+}
+
+button:hover, button:focus {
+  background: var(--color);
+  box-shadow: 0 0 0 3px var(--color-light) , 0 0 0 4px var(--color);
+  outline: none;
+}
+
+button:active {
+  box-shadow: 0 0 0 3px var(--color) , 0 0 0 4px var(--color);
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.5;
+}
+
+hr {
+  border: 2px solid black;
+  margin: 2rem auto;
+}
