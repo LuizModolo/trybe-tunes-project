@@ -13,10 +13,10 @@ class FormProfile extends Component {
       saveFunc } = this.props;
     return (
       <div>
-        <div>
+        <div className='profileEdit-full'>
           <label htmlFor="edit-input-image">
             {' '}
-            Imagem:
+            URL da Imagem:
             <input
               data-testid="edit-input-image"
               id="edit-input-image"
@@ -57,7 +57,7 @@ class FormProfile extends Component {
               data-testid="edit-input-description"
               id="edit-input-description"
               name="description"
-              type="text"
+              type="textarea"
               value={ description }
               onChange={ handleChange }
             />

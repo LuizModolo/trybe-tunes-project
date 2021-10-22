@@ -68,13 +68,20 @@ class Favorites extends Component {
         {loading ? <Loading /> : (
           <div className='favorits-list'>
             <h2>Músicas Favoritas</h2>
-            <div>
-              {favoriteList.map((music) => (<MusicCard
-                key={ music.trackId }
-                music={ music }
-                funcFavSong={ this.handleCheckbox }
-                checkIsFav={ this.musicIsFavorite(music.trackId) }
-              />))}
+            <div className='main-album'>
+              <div className='album-cart2'>
+                <img src='https://cdn.mensagenscomamor.com/content/images/m000513979.jpg?v=1&w=564&h=564' alt='minha-playlist' />
+                <h1 data-testid="album-name">My Playlist</h1>
+                <h3 data-testid="artist-name">Minhas músicas favoritas!</h3>
+              </div>
+              <div className='music-album-list'>
+                {favoriteList.map((music) => (<MusicCard
+                  key={ music.trackId }
+                  music={ music }
+                  funcFavSong={ this.handleCheckbox }
+                  checkIsFav={ this.musicIsFavorite(music.trackId) }
+                />))}
+              </div>
             </div>
           </div>
         )}
