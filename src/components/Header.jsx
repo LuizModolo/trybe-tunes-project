@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
 import './header.css';
+import logoTunes from '../images/Group 1 1.png'
+import profileImg from '../images/user.png'
 
 class Header extends Component {
   constructor() {
@@ -39,9 +41,9 @@ class Header extends Component {
           {loading ? <Loading /> : (
             <div className='header'>
               <div className='header-top'>
-                <img className='logo-header' src='/Group 1 1.png' alt='trybetuneslogo' />
+                <img className='logo-header' src={logoTunes} alt='trybetuneslogo' />
                 <div className='login-name'>
-                  <img src='/user.png' alt='user-icon' />
+                  <img src={profileImg} alt='user-icon' />
                   <p data-testid="header-user-name">{user.name}</p>
                 </div>
               </div>

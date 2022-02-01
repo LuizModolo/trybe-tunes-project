@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import { getUser } from '../services/userAPI';
 import Loading from '../components/Loading';
 import './profile.css';
+import profileImg from '../images/user.png'
 
 class Profile extends Component {
   constructor() {
@@ -43,7 +44,7 @@ class Profile extends Component {
         {loading ? <Loading /> : (
           <div className='profile-page'>
             <div className='profile-header'>
-              <img className='profile-img' data-testid="profile-image" src={ image !== '' ? image : '/user.png' } alt={ name } />
+              <img className='profile-img' data-testid="profile-image" src={ image !== '' ? image : profileImg } alt={ name } />
               <Link to="/profile/edit">
                 <button className='profile-button' type="button">Editar perfil</button>
               </Link>
